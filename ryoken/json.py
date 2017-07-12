@@ -28,3 +28,19 @@ class JSON:
     @staticmethod
     async def encode(data: Any, pretty: bool = False) -> str:
         return json_dumps(data, indent=4) if pretty else json_dumps(data)
+
+    @staticmethod
+    def sync_decode(data: str) -> Any:
+        if not isinstance(data, str):
+            raise UnexpectedJsonData
+
+        try:
+            decoded_data = json_loads(data)
+        except ValueError:
+            raise JsonDecodeError
+
+        return decoded_data
+
+    @staticmethod
+    def sync_encode(data: Any, pretty: bool = False) -> str:
+        return json_dumps(data, indent=4) if pretty else json_dumps(data)
