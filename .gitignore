@@ -1,0 +1,5 @@
+*.pyc
+/dist
+/.idea
+/build
+/ryoken.egg-info
