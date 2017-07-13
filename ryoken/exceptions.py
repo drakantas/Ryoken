@@ -20,7 +20,7 @@ class JsonDecodeError(ValueError):
     Raised if the provided json data couldn't be decoded due to a syntaxis error.
     """
     def __init__(self):
-        super().__init__("uJSON couldn't decode the provided data due to a syntaxis error.")
+        super().__init__("JSON couldn't decode the provided data due to a syntaxis error.")
 
 
 class UnexpectedDataValue(Exception):
@@ -29,3 +29,11 @@ class UnexpectedDataValue(Exception):
     """
     def __init__(self):
         super().__init__("The data argument must be a list or a tuple.")
+
+
+class NotSupportedValidation(Exception):
+    """
+    Raised if the regex validation requested isn't supported.
+    """
+    def __init__(self):
+        super().__init__("Not supported regex validation")
