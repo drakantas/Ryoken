@@ -29,4 +29,4 @@ class StrLengthDict(dict):
         if key in self:
             raise KeyError('Key already exists')
 
-        super().__setitem__(key, (len(key), value))
+        super().__setitem__(key, (len(value), value))
